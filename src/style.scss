@@ -1,0 +1,37 @@
+$bgColor:#eee;
+$pointColor:royalblue;
+
+body{
+    background-color:$bgColor;
+}
+
+ul{
+    list-style:none;
+    padding:0;
+    display:flex;
+    li{
+        margin:10px;
+        &:hover{
+            background-color:$pointColor;          
+        }
+    }
+}
+
+.border{
+    border:1px solid pink;
+}
+
+//상속 @extend
+div{
+    @extend .border;
+}
+
+//@mixin
+@mixin textStyle ($color,$bgColor, $size){
+    color:$color;
+    background-color:$bgColor;
+    font-size:$size;
+}
+.pst{
+    @include textStyle(royalblue,#ccc,20px )
+}
